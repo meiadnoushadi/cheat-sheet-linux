@@ -1,0 +1,307 @@
+jalase 5:channel amozesh linux
+-----------------------------------------------
+shortcuts:
+Shift Ctrl + : zoom tremnial
+Ctrl U : clearpassword
+-----------------------------------------------
+;		joda kardan order ha va ejra poshtesare ham
+sleep:		sleep terminal
+
+id:		show user id and group id and groups 
+
+ln		create hard link file or directroy
+		-s: soft link
+
+mv:		move and rename
+
+cp:		copy file
+		-r: copy directory
+		-v: verbose[details process]
+		-T: copy details directory
+
+whatis:		name->in manual order
+
+whereis:	address command
+
+alias:		create alias order
+		<name>='order'
+
+unalias		delete alias order
+
+pwd:		show address directory
+
+ls:		list Documents in directory
+		-a:all
+		-l:long details
+		-la:all and long details
+		-i: inode
+
+cd:		change directory
+
+clear:		clean terminal
+
+exit:		exit terminal[Alt+Ctrl+t -> open terminal shortcuts]
+
+/ :		root directory
+		/boot
+		/etc
+		/mnt
+		/dev
+		/bin
+		/lib
+		/
+		...
+
+uname:		name OS
+		-a : total information OS[all]
+
+man:		manual[man <order>]
+		/search in file
+		-k: search in manual string
+
+"Tab":		show complete order 2tab :total order
+
+cd ..:		back directory
+
+cd .:		in directory
+		relative path
+		absolute path
+
+cd -:		switch path
+
+cd:		change directory ~
+
+type <order>:	detail order
+
+mkdir:		create directory
+		-p : nested create directory
+		-> address: ~user/..
+
+touch:		create file [touch <name>]
+		{in..out}:create in ta out file
+
+rm:		delete file
+		-r delete directory
+
+drwxr-xr-x:	show access linux 10 char:
+		-rw-rw-r--  1 meiad meiad    0 مارس  11 21:47 text.txt
+		--------------------------
+		*:
+		d:directory
+		l:link
+		-:file
+		b:lock dev
+		c:char dev
+		--------------------------
+		permesion:
+		***:
+		3:user 3:Gruop 3:other
+		r:read
+		w:write
+		x:executealbe[d:open directory]
+		--------------------------
+		*:
+		of Hard links
+		--------------------------
+		* *:
+		Owners:
+		user group
+		--------------------------
+		*:
+		file size
+		--------------------------
+		last modify time
+		--------------------------
+		name file
+		--------------------------
+		*[1]***[2.user]***[2.group]***[2.other]*[3]*[4]*[5]*[6]*[7]*[8]
+		1.structure file
+		 2.permesion
+		  3.of hard links
+		   4.user
+		    5.group
+		     6.file-size
+		      7.last-modify
+		       8.file-name
+
+cat:		show total in file
+		-n number line[nl <name>]
+
+file:		show details file
+
+history:	histroy order
+		!<number history>
+		!!: akharin order
+		/home/user/.bash histroy
+		-c : clear history
+
+echo:		print and write in file
+		>>: write to file
+
+user root:	power user
+
+whoami:		what is user
+
+su		change user
+		password
+		prompt -> $ to #
+		sudo -i = su
+		exit
+
+sudo		run order by root user
+
+textEditor:
+	nano
+		Alt+A : set mark
+		Esc+A
+	vim
+	emacs
+
+head:		show 10 line in file
+		-n: number line
+
+tail:		show 10 end line in file
+		-n: number line
+
+less:		show page in line file
+		q:exit in order less
+		Ctrl G : koja hatid
+		n: switch search pattren
+		Shift n:switch back search pattern
+		> : go to start file
+		< : go to end file
+		& : run 2 roder
+
+xwhich:		find path order
+
+grep:		reqular expression
+		[grep string path1 path2 ...]
+		-w: word find
+		*:ever things
+		-r: search in directory
+		-c: number of word
+
+
+------------------------------------
+virtual enviroment:
+------------------
+env:		show env
+
+printenv	show env[printenv <name>]
+
+export <envName>=value	change envkey
+	movaghati dar terminal
+
+set		$<envName>
+
+Note:.bashrc file in user for set env
+<nameEnv>=$<nameEnv>:newpath added
+exprot $<nameNewEnv>=value
+
+-----------------------------------
+STDIN:
+	keyboard
+	...
+
+STDOUT:
+	terminal
+	...
+	order[input] > file[output]
+	EX: echo Hello > one.txt :write
+	    echo bye >> one.txt :amend
+
+STDERROR:
+	...
+	order[error] 2> file[error]:write
+	2>> : amend
+
+tr:	repalce:"string" "string" < file
+
+|:	order1 | order2 | order3
+	output order1=input order2,
+	output order2=input order3
+
+---------------------------------------
+packing:
+
+file.deb
+
+package-name-version-release-architecture.deb
+
+apt:
+	apt-cache	show app
+		showpkg:show
+		depends:show
+	apt-get:
+		install <namePackage>
+		remove <namePackage>
+		purge <namePackage>:totall
+		update -> update repository	
+		upgrade -> update appliaction in pc	
+		download <namePackage> : download file
+
+	add-apt-repository:
+		add-apt-repository "address"	
+
+dpgk:
+		-c: show details file
+		-I: show information
+		-i <namePackage> : install package file .deb
+		-r <namePackage> : remove package
+		-P or --purge <namePackage> : remove total package
+
+dpkg-reconfigure <namePackge> : reset package to once installation
+
+Note: repository ubuntu
+	/etc/apt/source.list
+---------------------------------------
+process:
+
+ps:		show process
+		-ef: show total processes
+
+top:		live process
+
+uptime:		show runing sys
+
+free:		show space hard
+		-h: show by GB
+---------------------------------------
+pattern matching:
+	*:every thing
+	?:every one char
+	[]:or
+	[0-9]:range 0 ta 9
+	[!] or [^]:not or
+	[::]:digit,...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

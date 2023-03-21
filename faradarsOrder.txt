@@ -1,0 +1,338 @@
+end jalase -- : faradars
+------------------------------------------------
+shortcute:
+	shift ctrl up/down : move to page terminal
+	shift ctrl + : zoom tremnial
+	ctrl U : clearpassword
+------------------------------------------------
+man order har ro begiri ba tamame details neshon mide:
+
+pwd:	print working directory
+
+cd:		change directory
+
+tree:	show tree structur
+
+clear:	clean terminal
+
+ls:		list directory
+
+touch:	create file
+
+cp:		copy file and directory
+
+mv:		move file and directory
+
+mkdir:	create directory
+
+ln:		create link
+
+echo:	print and ...
+
+locate:	search file and directory
+
+find:	search file and directory
+
+sudo:	change user for superuser
+
+su:	switch user
+
+> :	input to file[^] : 1.standard input 2.standard error
+	ex: ls -l . ./notfound 1>lsfile 2>errorfileO
+	    ls -l . ./notfound > lsfile 2>&1
+
+< :	input to order
+
+>> :	amend to file
+
+| :	input to order pipeline
+
+$? :	env found number standard pipeline error
+-----------------------------------------------
+managment user:
+	root : manage | /root : directory manage
+	Name : user	| /home/Name : directory user
+
+address : /etc/passwd - tamame permesion ha dar sys
+
+sudo :	darkhast be user manage
+
+whoami : che khasi hastam 
+
+passwd : change password root user[active root user]
+	1.sudo bash : change user mamoli be root user
+	2.passwd : set password root user
+	-----------------------------------------
+	passwd nameUser : set password nameUser
+	Note: faghat user haye mitonan az order sudo estefade konan ke ozv group sudo bashan
+	usermod: change details user[modify user]
+
+useradd : add user -d:set directory -e:time expire 
+
+id nameUser : show details user
+	1.uid : id user
+	2.gid : id group user
+	3.groups : group haye ozv
+
+userdel : delete user[admin user]
+	Note: $SHLVL - tedade shell haye ke dar stack ram hastam
+			ke dage su baraye switch estefade konim daem terminal new misaze
+			su - nameUser : dige yek terminal new nemisaze
+
+qroupadd : create qroup
+	Note: sudo usermod -a -G nameGroup nameUser
+			sudo deluser nameUser nameGroup
+------------------------------------------------
+permesion:
+	- --- --- ---
+	d rwx rwx rwx
+	type user groups other
+	1 111 111 111
+	r : read
+	w : write
+	x : executealbe
+
+	000 : 0 ---
+	001 : 1 --x
+	010 : 2	-w-
+	011 : 3 -wx
+	100 : 4 r--
+	101 : 5 r-x
+	110 : 6 rw-
+	111 : 7 rwx
+	
+chmod : change permesion file or directory
+	u:user
+	g:group
+	o:other
+	ex: u+rwx u-r
+	a : all -> a-rwx:remove all permesion a+rwx:add all permesion
+
+chown: change owners
+	ex: chown user:group nameFile
+
+umask : 0002 mijaveze pish farz
+		777-002:permesion directory
+		777-002-111:permesion file
+	umask --- :change umask
+------------------------------------------------
+/dev:
+	directory hast ke tamame sakhtafzar haye dvice ro toshe
+
+df : show sda mount
+
+ldblk : show sda and show partion
+
+mount : etesale hard disk ha be sakhtar derakhti OS[file system]
+
+unmount : exit darkane hard disk az sakhtar derakhti OS[file system]
+
+fdisk : managment disk
+------------------------------------------------
+compress:
+
+tar : ordere hast ke kole kar press va unpress file ya directory ro baramon anjam mide
+------------------------------------------------
+install software:
+
+apt: insatll for repository
+	
+	-get:
+		update : update and sync repository in dbOS
+		dist-update : total update repository ans OS
+		upgrade : update installed software in OS
+		isatll : install app
+			-f : fix librariy applications
+		purge : uninstall and removed total
+		cashe :
+			search : search app
+			show : show details app
+			showpkg : show depends app
+		Note: /var/cache/apt/archives/ directory Download file in repository
+		clean : claer /var/cache/apt/archives directory
+		check : check tree app in OS
+
+		
+
+	add-apt-repository URL
+	Note:wget URL => For Download
+	Note: directory add URL : /etc/apt/sources.list
+
+
+dpkg: install .deb file
+	-i : install 
+	Note: -i *.deb install totoal app in directory
+.run .sh: install script .run .sh
+	./<namePackage>.sh or .run
+
+convert .deb to .rpm : alien
+---------------------------------------
+managment process : 
+
+pstree: show process run in OS
+	Note: |more : kholase sazi output
+
+top : realtime show process
+	k : kill process
+
+kill -l : show signal kill
+
+ps :
+	a : all process
+
+pkill :
+	-KELL <name process>
+--------------------------------------
+shell script :
+	shell script is one file ba pasvand .sh
+	if/while/for/... ro dare va ham zaman ham mitoni
+	az orderhaye bash dakhelesh estefade koni
+
+cron : 
+	crontab -e : set editor
+	open : crontab -e
+	dare yek sakhtare hast ke on ro barasase time ke dadi yek command ejra mikone
+	Note: mishe he shell script nevesh va dad be cron ke on ro anjanm bede
+---------------------------------------
+run level:
+
+who : show run level dar hale ejra
+
+init : change run level
+	0:shotdwon
+	1:single user[root]
+	2:multi user off network
+	3:multi user on network
+	4:reserved
+	5:GUI
+	6:Reboot
+
+	Note : file ke grub azash run level ro mikhone /boot/grub/grub.cfg
+		search wmlinuz -> end line space mizanim va add ro vared mikonim
+		[w! and q nano text editor]
+
+	Note: file /etc/defalt/grub : file hast ke zaman boot system grub set mikone
+		age change anjam dade bashi sudo upgrade-grub2 change haro beroz mikoni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+order:
+prompt:
+	foruser:	user@host:[directory]$
+	forroot: rootName@host:[directory]#
+------------------------------------------------
+pwd:
+	print working directory
+	~~~~~~~~~~~~~~~~
+	show address directory
+	/ : root
+	/ digar : joda konande
+-------------------------------------------------
+cd:
+	change directory
+	~~~~~~~~~~~~~
+	taghir directory
+	abs:
+		cd /address/address/..
+	rel:
+		cd address/address
+	------------------------------
+	option:
+		Note: cd khali miyare to directory ~
+		. : directory feli
+		.. : directory ghabli
+		- : switch bane directory haye akhar
+-------------------------------------------------	
+tree:
+	show tree structur
+	~~~~~~~~~~~~~~
+	neshan dadane sakhtar besorat derakhti
+-------------------------------------------------
+clear:
+	clean terminal
+	~~~~~~~~~~~~~~
+	pak kardane terminal
+	-----------------------------
+	option:
+	f : full name directory
+-------------------------------------------------
+ls:
+	list directory
+	~~~~~~~~~~~~~~
+	list darkane directory
+	----------------------
+	ls [directory]... [option]
+	a: all
+	l: list kamel ba dastresiha
+	h: neshan dadane size directory va file bar hasb KB,MB,GB
+	d: details khobe directory
+-------------------------------------------------
+drwxr-xr-x:	show access linux 10 char:
+		-rw-rw-r--  1 meiad meiad    0 مارس  11 21:47 text.txt
+		--------------------------
+		*:
+		d:directory
+		l:link
+		-:file
+		b:lock dev
+		c:char dev
+		--------------------------
+		permesion:
+		***:
+		3:user 3:Gruop 3:other
+		r:read
+		w:write
+		x:executealbe[d:open directory]
+		--------------------------
+		*:
+		of Hard links
+		--------------------------
+		* *:
+		Owners:
+		user group
+		--------------------------
+		*:
+		file size
+		--------------------------
+		last modify time
+		--------------------------
+		name file
+		--------------------------
+		*[1]***[2.user]***[2.group]***[2.other]*[3]*[4]*[5]*[6]*[7]*[8]
+		1.structure file
+		 2.permesion
+		  3.of hard links
+		   4.user
+		    5.group
+		     6.file-size
+		      7.last-modify
+		       8.file-name
+-------------------------------------------------
+touch:
+	create file
+	~~~~~~~~~~~
+	sakht yek file
+	---------------
+	touch [nameFile]...
