@@ -4,6 +4,14 @@ shortcute:
 	shift ctrl up/down : move to page terminal
 	shift ctrl + : zoom tremnial
 	ctrl U : clearpassword
+
+install python :
+	1-download file python .tgz
+	2-tar -xvf file.tgz
+	3-run ./configure
+	4-run sudo make
+	5-run sudo make test
+	6-run sudo make install
 ------------------------------------------------
 man order har ro begiri ba tamame details neshon mide:
 
