@@ -13,6 +13,9 @@ install python :
 	5-run sudo make test
 	6-run sudo make install
 ------------------------------------------------
+fix show sdX hard nfts in linux:
+	run : sudo ntfsfix /dev/<namePartion>
+------------------------------------------------
 man order har ro begiri ba tamame details neshon mide:
 
 pwd:	print working directory
