@@ -12,6 +12,11 @@ install python :
 	4-run sudo make
 	5-run sudo make test
 	6-run sudo make install
+	
+install git : 
+	1- add repo in website git-scm.com
+	2- apt update
+	3- apt install git
 ------------------------------------------------
 fix show sdX hard nfts in linux:
 	run : sudo ntfsfix /dev/<namePartion>
