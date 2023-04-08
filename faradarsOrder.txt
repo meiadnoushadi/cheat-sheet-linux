@@ -1,5 +1,72 @@
 end jalase -- : faradars
 ------------------------------------------------
+learn vim:
+*********
+mod:
+****
+insert:
+	keyword press i
+
+default:
+	keyword press ESC
+	
+	command
+	*******
+		unsave and quite ->
+			:q!
+		save ->
+			:w
+		save and quite ->
+			:wq , :x , :x!
+
+		edit -> 
+			dd -> delete line
+			dw -> delete word
+			r -> replace
+			u -> undo
+			Ctrl+r -> redo
+			yy -> copy line
+			yw -> copy word
+			y$ -> copy world ta end line
+			yG -> copy word ta end file
+			p -> paste bade neshangar
+			P -> paste ghabl az neshangar
+	
+
+		pymayesh ->
+
+				k
+			h		l
+				j
+			note:<num>+keywork
+
+			0 or | -> start line
+			$ -> end line
+			w -> switch word and symbolic
+			W -> switch word only
+			e -> end word and symbolic
+			E -> end word only
+			b -> start word and symbolic
+			B -> start word only
+			gg -> start file
+			G -> end file
+			shift+up -> page up
+			shift+down -> page down
+
+vimtutor:
+	learn vim basic by self vim applications
+
+<namefile>
+	age vojod dashte bashe open mikone age na
+	on ro bad az save kardan misaze
+------------------------------------------------
+promt:
+	normal user:
+		<userName>@<hostmane>:[address]$
+	root user:	
+		<userName>@<hostmane>:[address]#
+	note: ~ [address directory user]
+------------------------------------------------
 shortcute:
 	shift ctrl up/down : move to page terminal
 	shift ctrl + : zoom tremnial
