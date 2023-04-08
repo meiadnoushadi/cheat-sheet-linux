@@ -1,5 +1,5 @@
 end jalase -- : faradars
-------------------------------------------------
+############################################################################################
 learn vim:
 *********
 mod:
@@ -59,7 +59,8 @@ vimtutor:
 <namefile>
 	age vojod dashte bashe open mikone age na
 	on ro bad az save kardan misaze
-------------------------------------------------
+
+############################################################################################
 promt:
 	normal user:
 		<userName>@<hostmane>:[address]$
@@ -84,6 +85,13 @@ install git :
 	1- add repo in website git-scm.com
 	2- apt update
 	3- apt install git
+
+fix ssh for push :
+	1- ssh-keygen -t rsa -C "your_email@example.com" [create to file : id_rsa(praivate key) , id_rsa.pub(public key)]
+		note: your email used in github.com website.
+	2- create New ssh connection in github and import public key to connection [test connection : ssh -T git@github.com]
+	3- clone ssh url repository or edit .git/.gitconfig file by change url=https://... to url=git@github...
+
 ------------------------------------------------
 fix show sdX hard nfts in linux:
 	run : sudo ntfsfix /dev/<namePartion>
