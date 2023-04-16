@@ -1,4 +1,4 @@
-end jalase -- : faradars
+end jalase 08 : faradars
 ############################################################################################
 learn vim:
 *********
@@ -32,9 +32,7 @@ default:
 			p -> paste bade neshangar
 			P -> paste ghabl az neshangar
 	
-
 		pymayesh ->
-
 				k
 			h		l
 				j
@@ -61,18 +59,22 @@ vimtutor:
 	on ro bad az save kardan misaze
 
 ############################################################################################
+------------------------------------------------
 promt:
+------------------------------------------------
 	normal user:
 		<userName>@<hostmane>:[address]$
 	root user:	
 		<userName>@<hostmane>:[address]#
 	note: ~ [address directory user]
 ------------------------------------------------
+general setting
+------------------------------------------------
 shortcute:
 	shift ctrl up/down : move to page terminal
 	shift ctrl + : zoom tremnial
 	ctrl U : clearpassword
-
+%%%%%%%%%%%%%%%%%%%%%%
 install python :
 	1-download file python .tgz
 	2-tar -xvf file.tgz
@@ -80,45 +82,93 @@ install python :
 	4-run sudo make
 	5-run sudo make test
 	6-run sudo make install
-	
+%%%%%%%%%%%%%%%%%%%%%%
 install git : 
 	1- add repo in website git-scm.com
 	2- apt update
 	3- apt install git
-
+%%%%%%%%%%%%%%%%%%%%%%
 fix ssh for push :
 	1- ssh-keygen -t rsa -C "your_email@example.com" [create to file : id_rsa(praivate key) , id_rsa.pub(public key)]
 		note: your email used in github.com website.
 	2- create New ssh connection in github and import public key to connection [test connection : ssh -T git@github.com]
 	3- clone ssh url repository or edit .git/.gitconfig file by change url=https://... to url=git@github...
-
 ------------------------------------------------
 fix show sdX hard nfts in linux:
 	run : sudo ntfsfix /dev/<namePartion>
 ------------------------------------------------
-man order har ro begiri ba tamame details neshon mide:
+general order
+------------------------------------------------
+stracture file in linux : tree starcture file
+	/ : 	root directory
+	Note: total directory zir in directory hastn hata age dar yek disk other bashan mount mishan be in directory
+	boot/ :	dar in directory tamami file system haye hastan ke boot shodan OS ro anjam midan
+%%%%%%%%%%%%%%%%%%%%%%
+switch directory:
+	relative : dar on directory shor be address dadan konim. Ex: promt:~$ Desktop/directory1
+	abs	 : az root directory shor be address dadan konim. Ex: /home/meiad/Deskop/directory1
+%%%%%%%%%%%%%%%%%%%%%%
+man order har ro begiri ba tamame details neshon mide
+Note: mishe az chand ta option yek ja estefade kard
 
 pwd:	print working directory
-
-cd:		change directory
+	
+cd:	change directory
+	- : switch two directory akhari
+	~ : switch /home
+	.. : switch old directory
+	abs address : switch address
+	rela address : switch address
 
 tree:	show tree structur
+	-f : full address
+	
 
 clear:	clean terminal
+	Ctrl+l : shortcuts for clear page terminal
 
-ls:		list directory
+ls:	list directory
+	address : list darkan address. Ex: ls /home/meiad/Documents [abs,relative]
+	Note : default address . hast
+	-a : show all file and directory [show Heddin files]
+	-l : show list all detals. Ex: -rw-rw-r-- 1 meiad meiad 11759 آوریل    9 00:24 faradarsOrder.tx
+	-h : show size file and directory barhasb KB,MB,GB
+	Note : size directory file default 4096
+	-d : show detail self directory
+	Note: show directory and file heddin show in GUI press Ctrl+h
 
 touch:	create file
+	Note: age chand name jolosh bezarim chandta file baham misaze
 
-cp:		copy file and directory
-
-mv:		move file and directory
+cp:	copy file and directory
+	Note: default cpoy file
+	-r : copy directoty
+	-v : verbose name -> show details process
+	-u : backup directory and file [changes add file and directory]	
+		
+mv:	move file and directory
+	Note: ba in order mishe name file and directory ro aval konim
+	-v :verbose name
 
 mkdir:	create directory
+	Note: age chand name jolosh bezarim chandta file baham misaze
+	-p : create sub directory. Ex: mkdir directory1/directory2/directory3/...
 
-ln:		create link
+rm:	delete file
+	-r: delete directory
+	-f: force delete without question to deleted
 
-echo:	print and ...
+ln:	create link
+	Ex: ln file-mabda file-maghsad
+	Note: dar zame ke bedone option vard konim hard link misaze
+
+echo:	print file
+	Note: echo ... > address/nameFile -> write in file
+	      echo ... >> address/nameFile -> append in file
+
+env:	show total variable envirment in shell
+	Note: call variable $<name variable> and create variable <name variable>=order
+	Note: add variable const in shell write in variable in /home/user/.bashrc
 
 locate:	search file and directory
 
@@ -141,6 +191,7 @@ su:	switch user
 $? :	env found number standard pipeline error
 -----------------------------------------------
 managment user:
+-----------------------------------------------
 	root : manage | /root : directory manage
 	Name : user	| /home/Name : directory user
 
@@ -175,6 +226,8 @@ qroupadd : create qroup
 			sudo deluser nameUser nameGroup
 ------------------------------------------------
 permesion:
+------------------------------------------------
+total:
 	- --- --- ---
 	d rwx rwx rwx
 	type user groups other
@@ -207,12 +260,28 @@ umask : 0002 mijaveze pish farz
 		777-002-111:permesion file
 	umask --- :change umask
 ------------------------------------------------
+Disk [Hard]
+------------------------------------------------
+sd : namyesh hard dar linux hast
+	a : hard aval
+	b : hard dovom
+	c : ...
+
+sda : hard aval 
+	1 : partion aval
+	2 : partion dovom
+	3 : ...
+
+Ex:
+	sda3 : partion 3 az hard aval
+	sdc5 : partion 5 az hard sevom
+%%%%%%%%%%%%%%%%%%%%%%
 /dev:
 	directory hast ke tamame sakhtafzar haye dvice ro toshe
 
 df : show sda mount
 
-ldblk : show sda and show partion
+lsblk : show sda and show partion
 
 mount : etesale hard disk ha be sakhtar derakhti OS[file system]
 
@@ -221,10 +290,13 @@ unmount : exit darkane hard disk az sakhtar derakhti OS[file system]
 fdisk : managment disk
 ------------------------------------------------
 compress:
+------------------------------------------------
 
 tar : ordere hast ke kole kar press va unpress file ya directory ro baramon anjam mide
+
 ------------------------------------------------
 install software:
+------------------------------------------------
 
 apt: insatll for repository
 	
@@ -259,6 +331,7 @@ dpkg: install .deb file
 convert .deb to .rpm : alien
 ---------------------------------------
 managment process : 
+---------------------------------------
 
 pstree: show process run in OS
 	Note: |more : kholase sazi output
@@ -275,6 +348,7 @@ pkill :
 	-KELL <name process>
 --------------------------------------
 shell script :
+--------------------------------------
 	shell script is one file ba pasvand .sh
 	if/while/for/... ro dare va ham zaman ham mitoni
 	az orderhaye bash dakhelesh estefade koni
@@ -286,6 +360,7 @@ cron :
 	Note: mishe he shell script nevesh va dad be cron ke on ro anjanm bede
 ---------------------------------------
 run level:
+---------------------------------------
 
 who : show run level dar hale ejra
 
