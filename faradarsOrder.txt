@@ -1,4 +1,4 @@
-end jalase 08 : faradars
+end jalase 09 : faradars
 ############################################################################################
 learn vim:
 *********
@@ -57,6 +57,18 @@ vimtutor:
 <namefile>
 	age vojod dashte bashe open mikone age na
 	on ro bad az save kardan misaze
+############################################################################################
+learn nano:
+***********
+zamani ke yek file ro ba nano baz mikonim dar halat write baz mishe va mishe hamon lahze dar
+file shoro be neveshtan kard va dar payin nano rahnemaye dare
+Note: ^ => Ctrl nemad
+--------
+order
+--------
+^x :    baraye exit az file hast
+^w :    baraye search dar file morde estefade gharar migire
+^\ :    baraye replace kardan work dar file
 
 ############################################################################################
 ------------------------------------------------
@@ -110,6 +122,17 @@ switch directory:
 %%%%%%%%%%%%%%%%%%%%%%
 man order har ro begiri ba tamame details neshon mide
 Note: mishe az chand ta option yek ja estefade kard
+
+more:   show file andaze page terminal
+        Note:mishe output yek order ro ham be in command dad va on ro page be page negah kard
+        Note:ENTER change line to line SPACE change page to page
+
+cat:    show total file in terminal
+
+head:   show start 10 line in file
+        Note: mishe chand file ro ham zaman engah kard
+
+tail:   show end 10 line in file
 
 pwd:	print working directory
 	
