@@ -1,9 +1,12 @@
 end jalase 09 : faradars
 ############################################################################################
+############################################################################################
 learn vim:
-*********
+############################################################################################
+############################################################################################
+------------------------------------------------
 install plugin in vim:
-**********************
+------------------------------------------------
 create directory:
 	$ mkdir -p ~/.vim/pack/vendor/start
 clone plugin in start directory:
@@ -22,8 +25,9 @@ clone plugin in start directory:
 
 	surround:
 		https://github.com/tpope/vim-surround.git
-----------------------------------------------------------------
+------------------------------------------------
 the best way to install plugin and actived:
+------------------------------------------------
     1-$ mkdir -p ~/.vim ~/.vim/autoload ~/.vim/backup ~/.vim/colors ~/.vim/plugged
     2-$ touch ~/.vimrc
     3-write in .vimrci:
@@ -31,7 +35,7 @@ the best way to install plugin and actived:
             curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
             (for active vim-plugin)
         after write open vim and run :PlugInstall
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -118,7 +122,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'mattn/emmet-vim'
 
 call plug#end()
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+<<<<<<<<<<<<<<
 two way add repository plugin:
    mostaghim:
     " Example Plug Syntax
@@ -126,14 +130,14 @@ two way add repository plugin:
     az makhzane junegunn
     " For GitHub repositories, you can just mention the username and repository
         Plug 'junegunn/vim-easy-align'
-=================================================
-for autocomplete code js :
+==============
+for autocomplete code : press Ctrl+x and p :show sugeset list keyword
 for autocomplete code : press Ctrl+n found match code
 for show role directory : press ESC and :NERDTREE
 for install plugin : press ESC and 
-==================================================
+------------------------------------------------
 mod:
-****
+------------------------------------------------
 insert:
 	keyword press i
 
@@ -148,7 +152,12 @@ default:
 			:w
 		save and quite ->
 			:wq , :x , :x!
-
+        
+        search -> 
+            /<string>
+            show next search press : n
+            show back search press : N
+        
 		edit -> 
 			dd -> delete line
 			dw -> delete word
@@ -181,6 +190,7 @@ default:
 			shift+up -> page up
 			shift+down -> page down
 
+==============
 vimtutor:
 	learn vim basic by self vim applications
 
@@ -188,18 +198,23 @@ vimtutor:
 	age vojod dashte bashe open mikone age na
 	on ro bad az save kardan misaze
 ############################################################################################
+############################################################################################
 learn nano:
-***********
+############################################################################################
+############################################################################################
 zamani ke yek file ro ba nano baz mikonim dar halat write baz mishe va mishe hamon lahze dar
 file shoro be neveshtan kard va dar payin nano rahnemaye dare
 Note: ^ => Ctrl nemad
---------
+------------------------------------------------
 order
---------
+------------------------------------------------
 ^x :    baraye exit az file hast
 ^w :    baraye search dar file morde estefade gharar migire
 ^\ :    baraye replace kardan work dar file
-
+############################################################################################
+############################################################################################
+structire linux
+############################################################################################
 ############################################################################################
 ------------------------------------------------
 promt:
@@ -216,56 +231,81 @@ shortcute:
 	shift ctrl up/down : move to page terminal
 	shift ctrl + : zoom tremnial
 	ctrl U : clearpassword
-%%%%%%%%%%%%%%%%%%%%%%
+
+############################################################################################
+############################################################################################
+install application in linux
+############################################################################################
+############################################################################################
+------------------------------------------------
 install python :
+------------------------------------------------
 	1-download file python .tgz
 	2-tar -xvf file.tgz
 	3-run ./configure
 	4-run sudo make
 	5-run sudo make test
 	6-run sudo make install
-%%%%%%%%%%%%%%%%%%%%%%
+------------------------------------------------
 install git : 
+------------------------------------------------
 	1- add repo in website git-scm.com
 	2- apt update
 	3- apt install git
-%%%%%%%%%%%%%%%%%%%%%%
+------------------------------------------------
 fix ssh for push :
+------------------------------------------------
 	1- ssh-keygen -t rsa -C "your_email@example.com" [create to file : id_rsa(praivate key) , id_rsa.pub(public key)]
 		note: your email used in github.com website.
 	2- create New ssh connection in github and import public key to connection [test connection : ssh -T git@github.com]
 	3- clone ssh url repository or edit .git/.gitconfig file by change url=https://... to url=git@github...
 ------------------------------------------------
 fix show sdX hard nfts in linux:
-	run : sudo ntfsfix /dev/<namePartion>
 ------------------------------------------------
+fix ssh for push :
+	run : sudo ntfsfix /dev/<namePartion>
+############################################################################################
+############################################################################################
 general order
+############################################################################################
+############################################################################################
 ------------------------------------------------
 stracture file in linux : tree starcture file
+------------------------------------------------
 	/ : 	root directory
 	Note: total directory zir in directory hastn hata age dar yek disk other bashan mount mishan be in directory
 	boot/ :	dar in directory tamami file system haye hastan ke boot shodan OS ro anjam midan
-%%%%%%%%%%%%%%%%%%%%%%
+------------------------------------------------
+fix ssh for push :
+------------------------------------------------
+fix ssh for push :
 switch directory:
 	relative : dar on directory shor be address dadan konim. Ex: promt:~$ Desktop/directory1
 	abs	 : az root directory shor be address dadan konim. Ex: /home/meiad/Deskop/directory1
-%%%%%%%%%%%%%%%%%%%%%%
+------------------------------------------------
+general command
+------------------------------------------------
 man order har ro begiri ba tamame details neshon mide
 Note: mishe az chand ta option yek ja estefade kard
-
+==============
 more:   show file andaze page terminal
         Note:mishe output yek order ro ham be in command dad va on ro page be page negah kard
         Note:ENTER change line to line SPACE change page to page
-
+==============
+more:   show file andaze page terminal
 cat:    show total file in terminal
 
+==============
 head:   show start 10 line in file
         Note: mishe chand file ro ham zaman engah kard
 
+==============
 tail:   show end 10 line in file
 
+==============
 pwd:	print working directory
 	
+==============
 cd:	change directory
 	- : switch two directory akhari
 	~ : switch /home
@@ -273,13 +313,16 @@ cd:	change directory
 	abs address : switch address
 	rela address : switch address
 
+==============
 tree:	show tree structur
 	-f : full address
 	
 
+==============
 clear:	clean terminal
 	Ctrl+l : shortcuts for clear page terminal
 
+==============
 ls:	list directory
 	address : list darkan address. Ex: ls /home/meiad/Documents [abs,relative]
 	Note : default address . hast
@@ -290,47 +333,89 @@ ls:	list directory
 	-d : show detail self directory
 	Note: show directory and file heddin show in GUI press Ctrl+h
 
+==============
 touch:	create file
 	Note: age chand name jolosh bezarim chandta file baham misaze
 
+==============
 cp:	copy file and directory
 	Note: default cpoy file
 	-r : copy directoty
 	-v : verbose name -> show details process
 	-u : backup directory and file [changes add file and directory]	
 		
+==============
 mv:	move file and directory
 	Note: ba in order mishe name file and directory ro aval konim
 	-v :verbose name
 
+==============
 mkdir:	create directory
 	Note: age chand name jolosh bezarim chandta file baham misaze
 	-p : create sub directory. Ex: mkdir directory1/directory2/directory3/...
 
+==============
 rm:	delete file
 	-r: delete directory
 	-f: force delete without question to deleted
 
+==============
 ln:	create link
 	Ex: ln file-mabda file-maghsad
 	Note: dar zame ke bedone option vard konim hard link misaze
 
+==============
 echo:	print file
 	Note: echo ... > address/nameFile -> write in file
 	      echo ... >> address/nameFile -> append in file
 
+==============
 env:	show total variable envirment in shell
 	Note: call variable $<name variable> and create variable <name variable>=order
 	Note: add variable const in shell write in variable in /home/user/.bashrc
 
+==============
 locate:	search file and directory
+    Note: pattern for search in system vali in command az database system ke rozi yek bar update mishe
+          estefade mikone
+    Note: barye inke database command locate update beshe bayad command 'sudo updatedb' ro ejra kard
+==============
+find:	search file and directory va in command be kochad va bozorg bodan letter ha hasas hast
+    structure : find [path] [option] [pattern]
+    -name : search by name file and directory
+    -iname : search bedon tavajo be kochad va bozorg bodan letter ha
+    -type : jense file d-directory f-normalFile l-link b-divcehard
+    -empty : search in empty file
+    -user : sahebe file
+    -mtime : search by days dar baze zamani ke change shodan  
+        Ex: -mtime 50 or -mitme +10 -mtime -50 [10 roze pish ta 50 roze pish]
+    -atime : search by days dar baze zamani ke beshon access shode
+        Ex: -atime 25 or -atime +5 -mtime -25 [5 roze pish ta 25 roze pish]
+    -mmin : search by hours ke change shodan
+    -amin : search by hours ke access shodan
+    -size : search by size [b,K,M,G] -<number> = kamtar az <number> / +<nubmer> = bishtar az <number>
+    -mindepth : omghe search az onja ta tahe tree
+        Ex : find <path> -mindepth <number> / az path ta tahe tree
+    -maxdepth : omghe search az path ta jaye ke gofte shoe
+        Ex : find <path> -maxdepth <number> / az path ta sathe <number>
+        Note: maxdepth hade aksar nofoz az path |  [path/---/---/---/---/---]maxdepth/---/---/---/---/endtree. -maxdepth 5 | total tree depth : 10
+              mindepth az path ta tahel path | path/---/mindepth[---/---/---/---/endtree.] -mindepth 2 | total tree depth : 6
+              Ex : path/---/---/---/mindepth[---/---/---/---/---]maxdepth/---/---/endtree. -mindepth 4 -maxdepth 8 | totoal tree depth :11
+    -prem : search bar hasbe permision
+*****
+REGEX:
+grep use in fine:
+    * : har chizi be har tedadi
+    ? : har chizi be eyk meghdar
+    [a-z] : har harfi az a ta z be yek beghdar
 
-find:	search file and directory
-
+==============
 sudo:	change user for superuser
 
+==============
 su:	switch user
 
+==============
 > :	input to file[^] : 1.standard input 2.standard error
 	ex: ls -l . ./notfound 1>lsfile 2>errorfileO
 	    ls -l . ./notfound > lsfile 2>&1
@@ -348,12 +433,16 @@ managment user:
 	root : manage | /root : directory manage
 	Name : user	| /home/Name : directory user
 
+==============
 address : /etc/passwd - tamame permesion ha dar sys
 
+==============
 sudo :	darkhast be user manage
 
+==============
 whoami : che khasi hastam 
 
+==============
 passwd : change password root user[active root user]
 	1.sudo bash : change user mamoli be root user
 	2.passwd : set password root user
@@ -362,18 +451,22 @@ passwd : change password root user[active root user]
 	Note: faghat user haye mitonan az order sudo estefade konan ke ozv group sudo bashan
 	usermod: change details user[modify user]
 
+==============
 useradd : add user -d:set directory -e:time expire 
 
+==============
 id nameUser : show details user
 	1.uid : id user
 	2.gid : id group user
 	3.groups : group haye ozv
 
+==============
 userdel : delete user[admin user]
 	Note: $SHLVL - tedade shell haye ke dar stack ram hastam
 			ke dage su baraye switch estefade konim daem terminal new misaze
 			su - nameUser : dige yek terminal new nemisaze
 
+==============
 qroupadd : create qroup
 	Note: sudo usermod -a -G nameGroup nameUser
 			sudo deluser nameUser nameGroup
@@ -398,6 +491,7 @@ total:
 	110 : 6 rw-
 	111 : 7 rwx
 	
+==============
 chmod : change permesion file or directory
 	u:user
 	g:group
@@ -405,9 +499,11 @@ chmod : change permesion file or directory
 	ex: u+rwx u-r
 	a : all -> a-rwx:remove all permesion a+rwx:add all permesion
 
+==============
 chown: change owners
 	ex: chown user:group nameFile
 
+==============
 umask : 0002 mijaveze pish farz
 		777-002:permesion directory
 		777-002-111:permesion file
@@ -428,18 +524,23 @@ sda : hard aval
 Ex:
 	sda3 : partion 3 az hard aval
 	sdc5 : partion 5 az hard sevom
-%%%%%%%%%%%%%%%%%%%%%%
+==============
 /dev:
 	directory hast ke tamame sakhtafzar haye dvice ro toshe
 
+==============
 df : show sda mount
 
+==============
 lsblk : show sda and show partion
 
+==============
 mount : etesale hard disk ha be sakhtar derakhti OS[file system]
 
+==============
 unmount : exit darkane hard disk az sakhtar derakhti OS[file system]
 
+==============
 fdisk : managment disk
 ------------------------------------------------
 compress:
@@ -475,6 +576,7 @@ apt: insatll for repository
 	Note: directory add URL : /etc/apt/sources.list
 
 
+==============
 dpkg: install .deb file
 	-i : install 
 	Note: -i *.deb install totoal app in directory
@@ -489,14 +591,18 @@ managment process :
 pstree: show process run in OS
 	Note: |more : kholase sazi output
 
+==============
 top : realtime show process
 	k : kill process
 
+==============
 kill -l : show signal kill
 
+==============
 ps :
 	a : all process
 
+==============
 pkill :
 	-KELL <name process>
 --------------------------------------
@@ -506,6 +612,7 @@ shell script :
 	if/while/for/... ro dare va ham zaman ham mitoni
 	az orderhaye bash dakhelesh estefade koni
 
+==============
 cron : 
 	crontab -e : set editor
 	open : crontab -e
@@ -517,6 +624,7 @@ run level:
 
 who : show run level dar hale ejra
 
+==============
 init : change run level
 	0:shotdwon
 	1:single user[root]
