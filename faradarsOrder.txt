@@ -1,4 +1,4 @@
-end jalase 09 : faradars
+end jalase 11 : faradars
 ############################################################################################
 ############################################################################################
 learn vim:
@@ -404,10 +404,45 @@ find:	search file and directory va in command be kochad va bozorg bodan letter h
     -prem : search bar hasbe permision
 *****
 REGEX:
-grep use in fine:
     * : har chizi be har tedadi
     ? : har chizi be eyk meghdar
     [a-z] : har harfi az a ta z be yek beghdar
+==============
+pipline:
+
+standard input -> process -> standard output
+                             standard Error
+standard input : command
+standard output
+standard Error 
+
+pipline use | 
+    Ex : cat file.txt | 
+    ------------------
+    command haye ke mishe bad az pipline az onha estefade kard:
+    grep:
+        find result by regex
+        ke az tarigh pipline mishe output yek command ro dad behesh ke bar hasb on baryae ma joda kone natayej ro
+    wc:
+        word count
+        in commad tedad kalamat ro dar 
+        line    word    size
+        10      322     266
+    more:
+        show file content page to page
+        press Espace page to page / press ENTER line to line         
+    tr:
+        translate pattern
+        Ex: tr "REGEX-avaliye" "REGEX-jaygozin"
+    sed:
+        replace
+        Ex: sed 's/old/new/g'
+    sort:
+        sort by charcter
+    uniq:
+        delete mikone pattern haye shabih ro va yek ro bishtar neshon nemide
+==============
+date :  show date system
 
 ==============
 sudo:	change user for superuser
@@ -419,8 +454,8 @@ su:	switch user
 > :	input to file[^] : 1.standard input 2.standard error
 	ex: ls -l . ./notfound 1>lsfile 2>errorfileO
 	    ls -l . ./notfound > lsfile 2>&1
-
-< :	input to order
+Note: /dev/null -> yek file hast ke har pipline ye data ro dakhelsh berizi dar lahze az biyen mire 
+< :	input to order - is default process order
 
 >> :	amend to file
 
