@@ -634,11 +634,11 @@ Note: baraye didan sd ha mishe az lsblk did ke har hard koja mount shode
       vali age mount nashode bashe /dev pydash kon va dakhele /etc/fstab add kon
   Ex:
     # virtual-OS
-    /dev/sdb1 /home/meiad/Desktop auto auto,user,rw 0 0
+    /dev/sdb1 /home/meiad/Desktop/VIR auto auto,user,rw 0 0
     # Praivate-App-Edu
-    /dev/sdb2 /home/meiad/Desktop auto auto,user,rw 0 0
+    /dev/sdb2 /home/meiad/Desktop/PAE auto auto,user,rw 0 0
     # programming
-    /dev/sdb5 /home/meiad/Desktop auto auto,user,rw 0 0
+    /dev/sdb5 /home/meiad/Desktop/PROG auto auto,user,rw 0 0
 
 ==============
 unmount : exit darkane hard disk az sakhtar derakhti OS[file system]
@@ -651,48 +651,103 @@ fdisk : managment disk
 ------------------------------------------------
 compress:
 ------------------------------------------------
+anvae press sazi:
+    Bzip2:speedLow;sizePressHigh;.bz2
+    Gzip:speedHigh;sizePressLow;.gz
 
-tar : ordere hast ke kole kar press va unpress file ya directory ro baramon anjam mide
+tar : ordere hast ke kole kar archive va press va unpress file ya directory ro baramon anjam mide
+    c : create
+    v : verbos mod
+    f : file name archive and compress
+    j : create compress file .bz2 and gz
+ 
+    Ex: tar cvf <name archive>.tar <file1> ... -> CREATE ARCHIVE FILE
+    Ex: tar cvfj <name>.tar.bz2 ro gz <file1> ... -> CREATE COMPRESS FILE
+
+    t : show total detuals file archive    
+
+    x : for extract file
 
 ------------------------------------------------
 install software:
 ------------------------------------------------
 
-apt: insatll for repository
-	
-	-get:
-		update : update and sync repository in dbOS
-		dist-update : total update repository ans OS
-		upgrade : update installed software in OS
+apt-get:
+  insatll for repository:
+
+		update : update and sync repository in dbOS bar asase akharim version ha dar repository
+
+		dist-update : total update repository and OS
+
+		upgrade : update installed software in OS bar asase akharim update haye ke az apt update grefte mishe 
+
 		isatll : install app
 			-f : fix librariy applications
+
 		purge : uninstall and removed total
+
 		cashe :
 			search : search app
 			show : show details app
 			showpkg : show depends app
-		Note: /var/cache/apt/archives/ directory Download file in repository
+		    Note: /var/cache/apt/archives/ directory Download file in repository
+
 		clean : claer /var/cache/apt/archives directory
+
 		check : check tree app in OS
 
-		
+        remove : remove package
 
-	add-apt-repository URL
+        purge : remove package by config
+
+        Note: sudo apt-get [option] [subcommand] [name applicaiton] ...
+              total remove file and config : sudo apt-get --purge remove
+
+Note: commnad apt only ham hast ke mishe goft version new apt-get hast ba in tafavot
+      ke yekan az apt-get zaeiftar hast		
+
+add-apt-repository URL
 	Note:wget URL => For Download
 	Note: directory add URL : /etc/apt/sources.list
 
 
 ==============
-dpkg: install .deb file
-	-i : install 
-	Note: -i *.deb install totoal app in directory
-.run .sh: install script .run .sh
-	./<namePackage>.sh or .run
+dpkg:
+  install .deb file:
+	
+    -i : install 
+        dpkg -i <nameFile>.deb 
+	
+Note: -i *.deb install totoal app in directory
 
-convert .deb to .rpm : alien
+==============
+install file bash and binaray:
+    .sh: install shell script file .sh
+    	sudo bash <nameFile>.sh
+
+    .run: install binary file .run
+        sudo ./<nameFile>.run
+==============
+source code install:
+    Note:create make file ba tavajo be system khodemon
+         ke in kar in tarighe tozihate ke dar file INSTALL omade pish mirim
+
+Note: dar kol har application baraye ejra dar linux niyaz be yek seri library dare
+      ke dar linux dar zamne install har application miyad va lib hay morde niyaze 
+      khodesh ro dakhele repository os bar midare va har kodom ham ke nadash ro install
+      mikone.
+      yani lib ha dar repository os hastan va har application baraye ejra on ha ro seda
+      mizane.
+      baraz windows ke har application bedone tavajo be digar application mojod dar yek
+      masir lib hay khodesh ro install mikone ke in kar mojeb mishe lib haye tekrari ziyadi
+      kar os beshine
+
+Note: convert .deb to .rpm by command alien
 ---------------------------------------
 managment process : 
 ---------------------------------------
+process ha dar linux ham yek structure tree dare 
+
 
 pstree: show process run in OS
 	Note: |more : kholase sazi output
@@ -707,10 +762,13 @@ kill -l : show signal kill
 ==============
 ps :
 	a : all process
-
+    aux : show total process
 ==============
 pkill :
 	-KELL <name process>
+
+==============
+alt+ctrl+F{1,2,3,4,5,6,7}
 --------------------------------------
 shell script :
 --------------------------------------
