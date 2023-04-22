@@ -466,20 +466,33 @@ $? :	env found number standard pipeline error
 managment user:
 -----------------------------------------------
 	root : manage | /root : directory manage
+
+        root:x:0:0:root:/root:/bin/bash
+
 	Name : user	| /home/Name : directory user
 
-==============
-address : /etc/passwd - tamame permesion ha dar sys
+        meiad:x:1000:1000:meiad,,,:/home/meiad:/bin/bash
+
+Note: see show users and application -> cat /etc/passwd
 
 ==============
 sudo :	darkhast be user manage
 
 ==============
+su : swtich between user
+    Note : baraye khoroj az yek user az command exit bayad estefade kard
+    Note : sudo groupe hast ke har usere ke dar on bashe mitone dastorat ro az tarafe user root ejra kone[pas group mohemi hast]
+    Note : default su means su root
+==============
 whoami : che khasi hastam 
 
 ==============
+
+Note: besorat pish farz karbar moder dar ubuntu active nist va ba usere ke nasb barash anjam shode mishe be user root
+      swtich kard.
+
 passwd : change password root user[active root user]
-	1.sudo bash : change user mamoli be root user
+	1.sudo bash : change user mamoli be root user | sudo su : login shodan be user root be vasile user alsi
 	2.passwd : set password root user
 	-----------------------------------------
 	passwd nameUser : set password nameUser
@@ -487,16 +500,22 @@ passwd : change password root user[active root user]
 	usermod: change details user[modify user]
 
 ==============
-useradd : add user -d:set directory -e:time expire 
-
+useradd : add user 
+    -d:set directory 
+    -e:time expire 
+    -m|--create-home
+    -g: add group
+    Ex: useradd -d <date> -g <nameGroup>m -e <date> <nameUser>
 ==============
 id nameUser : show details user
 	1.uid : id user
 	2.gid : id group user
 	3.groups : group haye ozv
+    Ex: uid=1000(meiad) gid=1000(meiad) groups=1000(meiad),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),132(lxd),133(sambashare)
 
 ==============
 userdel : delete user[admin user]
+    -r|--remove : for Files in the user's home directory will be removed along with the home directory itself and the user's mail spool.
 	Note: $SHLVL - tedade shell haye ke dar stack ram hastam
 			ke dage su baraye switch estefade konim daem terminal new misaze
 			su - nameUser : dige yek terminal new nemisaze
@@ -505,6 +524,9 @@ userdel : delete user[admin user]
 qroupadd : create qroup
 	Note: sudo usermod -a -G nameGroup nameUser
 			sudo deluser nameUser nameGroup
+Note : show total groups cat /etc/group and show user login in group
+
+groupdel : delete group
 ------------------------------------------------
 permesion:
 ------------------------------------------------
@@ -525,19 +547,38 @@ total:
 	101 : 5 r-x
 	110 : 6 rw-
 	111 : 7 rwx
+
+Note: default permision create file 664
+      default permision create file 775
+
+    drwxrwxr-x 2 meiad meiad 4096 آوریل   22 17:45 directory1/
+    -rw-rw-r-- 1 meiad meiad    0 آوریل   22 17:45 file1
 	
 ==============
 chmod : change permesion file or directory
 	u:user
 	g:group
 	o:other
-	ex: u+rwx u-r
+    u means user; - means group ; o menas other ; a means user and group and other a==ugo
+    + means add ; - means delete
+	ugo+rw : means be user va groups va other permision rw ro bede
+    g-r : meane az group permision r ro begir
+    ex: u+rwx u-r
 	a : all -> a-rwx:remove all permesion a+rwx:add all permesion
 
+Note: mishe az number haye 3 raghami baraye in kar estefade kar
+      Ex: 700 for file : chmod 700 <nameFile>  :  -rwx------
+          664 for directory : chmod 664 <nameDirectory>  :  drw-rw-r-x
+
+*****************
+permision default:
+    umask 0/002 default directory hast ke in add az 777 kam mishe
+    va permision file ha 111 ta az directory ha kam ta hast
+    for change umask: umask <number 3 char>
 ==============
 chown: change owners
 	ex: chown user:group nameFile
-
+    chwon <user>:<group> <name file and directory>
 ==============
 umask : 0002 mijaveze pish farz
 		777-002:permesion directory
@@ -564,19 +605,49 @@ Ex:
 	directory hast ke tamame sakhtafzar haye dvice ro toshe
 
 ==============
-df : show sda mount
-
+df : show device and parttion mount in system
+    loop/part/disk
+    -h : show size human readable
 ==============
 lsblk : show sda and show partion
 
 ==============
 mount : etesale hard disk ha be sakhtar derakhti OS[file system]
+Note: age bekhaym yek disk dar zamane bala omadan OS shensayei beshe bayad dar file /etc/fstab on ro tarif konim
+cat /etc/fstab:
+  5 # that works even if disks are added and removed. See fstab(5).
+  6 #
+  7 # <file system>                             <mount point>   <type>          <options>           <dump>  <pass>
+  8 # / was on /dev/sda7 during installation
+  9   UUID=cdf334ce-95e7-4cfc-a0da-81d119aaff83 /               ext4            errors=remount-ro   0       1
+ 10 # /boot was on /dev/sda3 during installation
+ 11   UUID=e096d3ed-a1bd-403a-a651-5576fd120e02 /boot           ext4            defaults            0       2
+ 12 # /home was on /dev/sda6 during installation
+ 13   UUID=d094f22e-94ff-4e08-863a-f37cb763df84 /home           ext4            defaults            0       2
+ 14 # swap was on /dev/sda5 during installation
+ 15   UUID=27f3538c-de91-485a-9f0c-607d94fd4816 none            swap            sw                  0       0
+
+Note: bad az add kardane parttion ha barye inke in mount shodan fori emal beshe mishe.
+      sudo mount -a estefade kon.
+
+Note: baraye didan sd ha mishe az lsblk did ke har hard koja mount shode 
+      vali age mount nashode bashe /dev pydash kon va dakhele /etc/fstab add kon
+  Ex:
+    # virtual-OS
+    /dev/sdb1 /home/meiad/Desktop auto auto,user,rw 0 0
+    # Praivate-App-Edu
+    /dev/sdb2 /home/meiad/Desktop auto auto,user,rw 0 0
+    # programming
+    /dev/sdb5 /home/meiad/Desktop auto auto,user,rw 0 0
 
 ==============
 unmount : exit darkane hard disk az sakhtar derakhti OS[file system]
 
 ==============
 fdisk : managment disk
+    -l : list mount in os
+    Ex : sudo fdisk <address parttion> -> open fdisk application 
+            -m for help
 ------------------------------------------------
 compress:
 ------------------------------------------------
