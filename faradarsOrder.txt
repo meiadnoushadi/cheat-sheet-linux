@@ -772,21 +772,54 @@ alt+ctrl+F{1,2,3,4,5,6,7}
 --------------------------------------
 shell script :
 --------------------------------------
-	shell script is one file ba pasvand .sh
-	if/while/for/... ro dare va ham zaman ham mitoni
-	az orderhaye bash dakhelesh estefade koni
+	shell script in tavanai ro dare ke alave bar estefade az command ha shoma az structure haye barnamenevisi
+    ham estefade konid yani yek barname benevisid ke command ha tebghe ey algoritm khasi ejra shavand
+    Note: shell script is one file ba pasvand .sh
+	Note: haman tor ke midonim file ha dar linux besorate pishfarz executealbe nistan pas bad az neveshtane
+          file ba pasvand .sh age on ro executealbe konim mishe on ro ejra kar ke software shell vazife in kar 
+          ro dare yani mese yek compayler ya interpeter yek zaban barnamenevisi ke file khodesh ro ejra mikone
+          shell ham file.sh ro ejra mikone
+    if/while/for/... ro dare va ham zaman ham mitoni
+    Ex :
+    for (( i = 0; i < 10; i++ )); do
+        date >> file.txt
+    done
 
+    if [[ condition ]]; then
+        order
+    fi
+
+    while [[ i ]]; do
+        order
+    done
+
+Note: baraye ejraye file.sh az command bash ghabl az file .sh estefade mikonim
 ==============
 cron : 
 	crontab -e : set editor
 	open : crontab -e
 	dare yek sakhtare hast ke on ro barasase time ke dadi yek command ejra mikone
 	Note: mishe he shell script nevesh va dad be cron ke on ro anjanm bede
+    in command yek file ro baz mikone dar address /tmp/corntab.q3umek/crontab
+    m       h       dom         mon         dow         command
+    min     hour    days        month       rozehafte   order
+    0:60    0:24    1:31        1:12        0:6         Ex:bash /home/meiad/Desktop/file.sh
+
+Note: "," be mani va , "-" be mani az , "*" be mani hameye baze ha
+
+Note: dar address /etc/cron.
+    cron.d
+    cron.daily
+    cron.hourly
+    cron.monthly
+    cron.weekly
+
 ---------------------------------------
 run level:
 ---------------------------------------
 
 who : show run level dar hale ejra
+    -r : show runlevel
 
 ==============
 init : change run level
@@ -797,19 +830,41 @@ init : change run level
 	4:reserved
 	5:GUI
 	6:Reboot
+    
+    Ex: init <number>   
 
 	Note : file ke grub azash run level ro mikhone /boot/grub/grub.cfg
-		search wmlinuz -> end line space mizanim va add ro vared mikonim
-		[w! and q nano text editor]
+   		   search wmlinuz -> end line space mizanim va add ro vared mikonim
+		   [w! and q nano text editor]
 
 	Note: file /etc/defalt/grub : file hast ke zaman boot system grub set mikone
 		age change anjam dade bashi sudo upgrade-grub2 change haro beroz mikoni
 
 
+    GRUB_DEFAULT=0
+    GRUB_TIMEOUT_STYLE=hidden
+    GRUB_TIMEOUT=-1
+    GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+    GRUB_CMDLINE_LINUX=""
 
 
 
+Note: file /etc/defalt/grub ro hatman ba sudo ejra kon ta betoni save koni taghirat ro
 
+
+Note: hatman bad az tighirat in command ejra beshe ta taghirat emal beshe : sudo update-grub2
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/init-select.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.15.0-69-generic
+Found initrd image: /boot/initrd.img-5.15.0-69-generic
+Found linux image: /boot/vmlinuz-5.11.0-27-generic
+Found initrd image: /boot/initrd.img-5.11.0-27-generic
+Found memtest86+ image: /memtest86+.elf
+Found memtest86+ image: /memtest86+.bin
+Found Windows 10 on /dev/sda1
+done
 
 
 
