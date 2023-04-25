@@ -500,11 +500,17 @@ passwd : change password root user[active root user]
 	usermod: change details user[modify user]
 
 ==============
+adduser the best way to create user
+bad az create kardan user : chown <nameUser>:<nameGroup> /home/<nameUserDirectroy>
+malekiyat ro mide bad mishe login kard.
+ 
 useradd : add user 
     -d:set directory 
     -e:time expire 
     -m|--create-home
     -g: add group
+    command add : sudo useradd -s /path/to/shell -d /home/{dirname} -m -G {secondary-group} {username}
+    commnad set password: sudo passwd {username}
     Ex: useradd -d <date> -g <nameGroup>m -e <date> <nameUser>
 ==============
 id nameUser : show details user
